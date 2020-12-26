@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t yravinderkumar33/travissetup .
+
+script: 
+  - docker container run yravinderkumar33/travissetup npm run test --watch=false
